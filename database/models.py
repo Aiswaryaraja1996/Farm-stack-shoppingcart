@@ -1,13 +1,14 @@
 from beanie import Document
 from typing import Optional
+from pydantic import BaseModel
 
 
 class Products(Document):
     name: str
     img: str
     desc: str
-    price: str
-    rating: int
+    price: int
+    rating: Optional[int]
     category: str
 
     class Settings:
@@ -21,5 +22,6 @@ class Products(Document):
                 "desc": "Titan Talk S Black Dial Smart Silicone Strap watch for Unisex",
                 "rating": 4,
                 "category": "watch",
+                "price": 3000,
             }
         }
